@@ -1,0 +1,25 @@
+{
+  "name": "beerush-online-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon"
+  },
+  "author": "Jordi Dosne",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "2.0.4",
+    "ts-node": "8.10.2",
+    "typescript": "3.9.7"
+  },
+  "dependencies": {
+    "@colyseus/monitor": "0.12.2",
+    "@colyseus/schema": "0.5.40",
+    "colyseus": "0.13.1",
+    "cors": "2.8.5",
+    "express": "4.17.1"
+  }
+}

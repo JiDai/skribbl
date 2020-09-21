@@ -12,11 +12,8 @@ export class SkribblRoom extends Room<State> {
     onCreate() {
         this.setState(new State());
 
-        this.onMessage("*", (client, message) => {
-            console.log(client.sessionId, "sent 'action' message: ", message);
-        });
-
         this.onMessage("startGame", (client, message) => {
+            console.log('"startGame": ', "startGame")
             this.state.gameStarted = true
         });
     }

@@ -115,7 +115,7 @@ export default class GameManager {
 
         try {
             this.currentRoom = await this.colyseusClient.joinById(roomId);
-            this.history.push('/game');
+            this.history.push('/lobby');
         } catch (error) {
             this.handleConnectionError(error);
             return;

@@ -72,6 +72,8 @@ class App extends React.Component<Props, State> {
                             <Lobby currentRoom={currentRoom}
                                    launchGame={() => this.gameManager?.newGame()}
                                    players={this.state.players}
+                                   onLaunchGame={() => this.props.history.push('/game')}
+                                   onStopGame={() => this.props.history.push('/')}
                             />
                         </Route>
 

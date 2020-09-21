@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Room} from "colyseus.js";
 
 import {Player} from "../types/Player";
@@ -8,17 +8,26 @@ type Props = {
     currentRoom?: Room
     players: Player[]
     launchGame: Function
+    onLaunchGame: Function
+    onStopGame: Function
 }
 
 /**
  * Lobby Functional Component.
  */
-function Lobby({currentRoom, players, launchGame}: Props) {
+function Lobby({currentRoom, players, launchGame, onLaunchGame, onStopGame}: Props) {
+        console.log('currentRoom: ', currentRoom)
+    useEffect(() => {
+        console.log('currentRoom?.state: ', currentRoom?.state)
+        if(currentRoom?.state.gameStarted) {
+            onLaunchGame()
+        }
+    }, [currentRoom?.state.gameStarted])
+
     return (
         <div className="Lobby">
-            <h1>Welcome</h1>
-
             {currentRoom && <div>
+                <h1>In a room {currentRoom?.id}</h1>
                 <div>
                     <button onClick={() => launchGame()}>Start game</button>
                 </div>
